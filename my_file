@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Check for argument
+if [ -z "$1" ]; then
+    NUMBER=50
+else
+    NUMBER=$1
+fi
+
+#make directory of numbers files
+mkdir zero_${NUMBER}_files
+cd zero_${NUMBER}_files
+
+
+for (( i=1; i<=${NUMBER}; i++ ))
+do
+    filename="file_${i}_.dat"  
+    zeros=$(printf '%0.s0' $(seq 1 $i))
+
+
+    echo "$zeros" > "$filename"
+done
+
+
+
+
+
+
+
